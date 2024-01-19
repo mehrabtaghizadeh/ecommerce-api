@@ -77,7 +77,7 @@ app.post('/api/v1/PaymentRequest', function(req, res) {
     const {amount,phoneNumber,email,fullName,userId,lineItems,streetAddress,postalCode,city,paid = true} = req.body;
     zarinpal.PaymentRequest({
 		Amount: amount,
-		CallbackURL: 'http://localhost:3000/success/',
+		CallbackURL: `${process.env.ECOMMERCE_URL}/success/`,
 		Description: 'خرید شما',
 		Email: email,
 		Mobile: phoneNumber,
